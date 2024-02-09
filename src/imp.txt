@@ -1,0 +1,14 @@
+const [weatherInfo, setWeatherInfo] = useState({})
+        const fetchData = async (city) =>{
+         await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=ec3ccb20da01d87f8827230d9df6821d&units=metric`)
+        .then((data) => data.json())
+        .then((data) => setWeatherInfo(data))
+        // console.log(response.main.temp)
+        
+      }
+      
+       useEffect(() =>{
+        fetchData("Bhopal")
+       },[])
+      console.log(weatherInfo.name)
+        
