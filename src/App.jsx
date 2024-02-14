@@ -14,14 +14,14 @@ function App() {
   const [wind, setWind] = useState("0")
   const [cityName, setCityName] = useState('');
   const [data, setData] = useState({});
-
+  const id = String(import.meta.env.VITE_OPENWEATEHRID)
 
   // Fuction for Api Call to fetch weather Info
 
   const useWeatherInfo = async (city) => {
     setLoading(true);
     try {
-      await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=ec3ccb20da01d87f8827230d9df6821d&units=metric`)
+      await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${id}&units=metric`)
         .then((res) => res.json())
         .then((res) => {
           setCityName(res.name);
