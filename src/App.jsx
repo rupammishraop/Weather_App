@@ -52,7 +52,8 @@ function App() {
   // for Changing the Image depending upon the weather condition 
 
   useEffect(() => {
-    document.querySelector('#conditionImg').src = `/src/images/${image}.png`;
+    document.querySelector('#conditionImg').src = `./src/${image}.png`;
+    // document.querySelector('#conditionImg').src = "./src/weatherLogo.png";
   }, [image])
 
   // Handing the Search Btn
@@ -103,7 +104,7 @@ function App() {
         <div className=' flex flex-col items-center'>
           <div className='flex flex-col overflow-hidden mt-4'>
             <img className='w-40 h-40 rounded-xl '
-              id='conditionImg' src='\src\images\clouds.png' />
+              id='conditionImg' src='\clouds.png' />
             {image !== "weatherLogo" ? <div>  <p className=' font-semibold text-center text-2xl'>{image}</p>
               <p className=' border-b-8 rounded-xl border-yellow-200 w-full self-center' ></p> </div> : null}
 
@@ -118,7 +119,7 @@ function App() {
         <div className=' mt-4 flex flex-col items-center md:flex-row md:justify-between'>
           {humidity != 0 | ((typeof humidity) === "number") ?
             <div className='flex '>
-               <img className=' h-15 w-14 self-center' src="\src\images\humidity.png"      alt="" />
+               <img className=' h-15 w-14 self-center' src="./src/humidity.png"      alt="" />
               <div className='ml-3 text-xl font-semibold'>
                       <p className=''>Humidity</p>
                       <p>{humidity} %</p>
@@ -126,7 +127,7 @@ function App() {
             </div> : null}
           {wind != 0 || ((typeof wind) === "number") ?
           <div className='flex mt-6 md:mt-0 '>
-             <img className=' h-15 w-14 self-center' src="\src\images\wind.png" alt="" />
+             <img className=' h-15 w-14 self-center' src="./src/wind.png" alt="" />
                  <div className='ml-3 text-xl font-semibold'>
                    <p>Wind</p>
                    <p>{wind}km/h</p>
